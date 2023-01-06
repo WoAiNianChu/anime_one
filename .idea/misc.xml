@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/myproject/anime_one/app/src/main/res/layout/activity_main.xml" value="0.45634920634920634" />
+        <entry key="..\:/myproject/anime_one/app/src/main/res/layout/animation_row.xml" value="0.33" />
+        <entry key="..\:/myproject/anime_one/app/src/main/res/layout/episode_row.xml" value="0.31966490299823636" />
+        <entry key="..\:/myproject/anime_one/app/src/main/res/layout/fragment_animate_detail.xml" value="0.309375" />
+        <entry key="..\:/myproject/anime_one/app/src/main/res/layout/fragment_animation_list.xml" value="0.31666666666666665" />
+        <entry key="..\:/myproject/anime_one/app/src/main/res/layout/fragment_blank.xml" value="0.31666666666666665" />
+        <entry key="..\:/myproject/anime_one/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/myproject/anime_one/app/src/main/res/layout/fragment_recently_season.xml" value="0.2724867724867725" />
+        <entry key="..\:/myproject/anime_one/app/src/main/res/layout/fragment_recently_update.xml" value="0.31666666666666665" />
+        <entry key="..\:/myproject/anime_one/app/src/main/res/layout/fragment_season_list.xml" value="0.22" />
+        <entry key="..\:/myproject/anime_one/app/src/main/res/layout/fragment_video_play.xml" value="0.24779541446208111" />
+        <entry key="..\:/myproject/anime_one/app/src/main/res/layout/season_row.xml" value="0.2724867724867725" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
