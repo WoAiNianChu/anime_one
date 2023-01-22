@@ -1,34 +1,55 @@
 package com.cqm.anime_one
 
+import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
-import android.view.KeyEvent
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.WindowInsetsControllerCompat
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
-import androidx.navigation.ui.NavigationUI
 import com.cqm.anime_one.databinding.ActivityMainBinding
-import com.cqm.anime_one.pages.VideoPlayFragment
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+        binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+
+        this.initFocusEvent()
+        this.initClickEvent()
     }
 
-    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
-        val navHost = supportFragmentManager.findFragmentById(R.id.myNavHostFragment)
-        if (navHost != null) {
-            val fragment = navHost.childFragmentManager.primaryNavigationFragment
-            if (fragment is VideoPlayFragment) {
-                Log.i("111111111", keyCode.toString())
-                fragment.onMyKeyDown(keyCode)
+    private fun initFocusEvent() {
+        listOf(binding.view, binding.view2, binding.view3).forEach {
+            it.setOnFocusChangeListener { _, hasFocus ->
+                setFocusHighlight(it, hasFocus)
             }
         }
-        return super.onKeyDown(keyCode, event)
+    }
+
+    private fun setFocusHighlight(v: View, hasFocus: Boolean) {
+        if (hasFocus) {
+            v.setBackgroundColor(Color.argb(122, 255, 33, 33))
+        } else {
+            v.setBackgroundColor(Color.argb(255, 98, 0, 238))
+        }
+    }
+
+    private fun initClickEvent() {
+        binding.view.setOnClickListener {
+            val seasonIntent = Intent(this, SeasonListActivity::class.java)
+            seasonIntent.putExtra("seasonUrl", "")
+            this.startActivity(seasonIntent)
+        }
+        binding.view2.setOnClickListener {
+            val animationListIntent = Intent(this, AnimationListActivity::class.java)
+            this.startActivity(animationListIntent)
+        }
+        binding.view3.setOnClickListener {
+            val recentSeasonIntent = Intent(this, RecentlySeasonActivity::class.java)
+            this.startActivity(recentSeasonIntent)
+        }
     }
 }

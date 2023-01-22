@@ -3,10 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.cqm.anime_one">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-feature android:name="android.software.leanback"
+        android:required="true" />
+    <uses-feature android:name="android.hardware.touchscreen"
+        android:required="false" />
 
     <application
+        android:banner="@drawable/banner"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -17,12 +22,26 @@
         android:theme="@style/Theme.Anime_one"
         tools:targetApi="31">
         <activity
+            android:name=".AnimationListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecentlySeasonActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VideoPlayActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AnimateDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SeasonListActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
         </activity>
     </application>

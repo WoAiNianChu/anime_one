@@ -35,6 +35,7 @@ private val apiUrlRetrofit = Retrofit.Builder()
     .build()
 
 private val allListUrlRetrofit = Retrofit.Builder()
+//    .addConverterFactory(ScalarsConverterFactory.create())
     .addConverterFactory(MoshiConverterFactory.create(moshi))
     .baseUrl(ALL_LIST_URL)
     .build()
@@ -58,10 +59,19 @@ interface ApiUrlService {
             Call<AnimationType>
 }
 
+interface AllListService {
+    @GET("/")
+    fun getAllList(@Query("_") str:String):
+            Call<List<List<String>>>
+}
+
 object AnimeApi {
     val webUrlRetrofitService : WebUrlService by lazy {
         webUrlRetrofit.create(WebUrlService::class.java) }
     val apiUrlRetrofitService : ApiUrlService by lazy {
-        apiUrlRetrofit.create(ApiUrlService ::class.java)
+        apiUrlRetrofit.create(ApiUrlService::class.java)
+    }
+    val allListRetrofitService: AllListService by lazy {
+        allListUrlRetrofit.create(AllListService::class.java)
     }
 }

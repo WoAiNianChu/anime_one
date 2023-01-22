@@ -48,6 +48,10 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+    implementation("androidx.leanback:leanback:1.2.0-alpha02")
+    implementation("androidx.leanback:leanback-preference:1.2.0-alpha02")
+    implementation("androidx.leanback:leanback-paging:1.1.0-alpha09")
+    implementation("androidx.leanback:leanback-tab:1.1.0-beta01")
     implementation 'org.jsoup:jsoup:1.15.3'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
