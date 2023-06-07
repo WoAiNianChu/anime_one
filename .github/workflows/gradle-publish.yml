@@ -22,6 +22,10 @@ jobs:
         chmod +x ./gradlew
         ./gradlew assembleRelease
 
+    - name: List output files
+      run: |
+        ls -la app/build/outputs/apk/release/
+
     - name: Upload APK
       uses: actions/upload-artifact@v2
       with:
